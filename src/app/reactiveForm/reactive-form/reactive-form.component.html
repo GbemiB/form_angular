@@ -1,0 +1,43 @@
+<div class="container">
+    <div *ngIf="!submitted">
+        <h1>Reactive Form</h1>
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit(profileForm)">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" formControlName="firstName" />
+                <div class="alert alert-danger" [hidden]="profileForm.controls.firstName.valid">First Name is required</div>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" formControlName="lastName" />
+                <div class="alert alert-danger" [hidden]="profileForm.controls.lastName.valid">Last Name is required</div>
+            </div>
+            <div class="form-group">
+                <label for="occupation">Occupation</label>
+                <input type="text" class="form-control" formControlName="occupation" />
+                <div class="alert alert-danger" [hidden]="profileForm.controls.occupation.valid">Occupation is required </div>
+            </div>
+            <div class="form-group">
+                <label for="cityOfResidence">City of Residence</label>
+                <input type="text" class="form-control" formControlName="cityOfResidence" />
+                <div class="alert alert-danger" [hidden]="profileForm.controls.cityOfResidence.valid">City of Residence is required</div>
+            </div>
+            <div class="form-group">
+                <label for="countryOfResidence">Country of Residence</label>
+                <input type="text" class="form-control" formControlName="countryOfResidence" />
+                <div class="alert alert-danger" [hidden]="profileForm.controls.countryOfResidence.valid">Country of Residence is required </div>
+            </div>
+            <div class="form-group">
+                <label for="localGovernmentOfResidence">Local Government of Residence</label>
+                <input type="text" class="form-control" formControlName="localGovernmentOfResidence" />
+                <div class="alert alert-danger" [hidden]="profileForm.controls.localGovernmentOfResidence.valid">Local Government of Residence </div>
+            </div>
+            <div class="form-group">
+                <label for="maritalStatus">Marital Status</label>
+                <input type="text" class="form-control" formControlName="maritalStatus" />
+                <div class="alert alert-danger" [hidden]="profileForm.controls.maritalStatus.valid">Marital Status is required </div>
+            </div>
+
+            <button type="submit" class="btn btn-default" [disabled]="!profileForm.valid">Submit</button> 
+        </form>  
+    </div>

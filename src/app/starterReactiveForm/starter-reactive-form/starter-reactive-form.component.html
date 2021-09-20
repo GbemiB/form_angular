@@ -1,0 +1,56 @@
+<h1>Customer Edit</h1>
+<form [formGroup]="customerForm" (ngSubmit)="onSubmit(customerForm)">
+  First Name:
+  <input type="text" class="form-control" formControlName="firstName" />
+  <br />
+  <span *ngIf="customerForm.controls.firstName.invalid"
+    >First Name is required!</span
+  >
+  <br />
+  Last Name:
+  <input type="text" class="form-control" formControlName="lastName" />
+  <br />
+  <span *ngIf="customerForm.controls.lastName.invalid"
+    >LastName is required!</span
+  >
+  <br />
+  Height:
+  <input type="text" class="form-control" formControlName="height" />
+  <br />
+  <span *ngIf="customerForm.controls.height.invalid"
+    >Height is required!</span
+  >
+  <br />
+  Weight:
+  <input type="text" class="form-control" formControlName="weight" />
+  <br />
+  <span *ngIf="customerForm.controls.weight.invalid"
+    >Weight is required!</span
+  >
+  <br />
+  Complexion:
+  <input type="text" class="form-control" formControlName="complexion" />
+  <br />
+  <span *ngIf="customerForm.controls.complexion.invalid"
+    >Complexion is required!</span
+  >
+  <br />
+  Nose Type:
+  <input type="text" class="form-control" formControlName="noseType" />
+  <br />
+  <span *ngIf="customerForm.controls.noseType.invalid"
+    >Nose Type is required!</span
+  >
+  <br />
+  <button class="btn btn-default" [disabled]="customerForm.invalid">
+    Submit
+  </button>
+  <br />
+  {{ message }}
+  <br />
+  Valid: {{ customerForm.valid }}
+  <br />
+  Pristine: {{ customerForm.pristine }}
+  <br />
+  Touched: {{ customerForm.touched }}
+</form>

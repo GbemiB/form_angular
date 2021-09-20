@@ -1,0 +1,110 @@
+<div class="container">
+  <div *ngIf="!submitted">
+    <h1>Template Driven Form</h1>
+    <form (ngSubmit)="onSubmit()" #templateForm="ngForm">
+      <div class="form-group">
+        <label for="name">First Name  </label>
+        <input
+          type="text"
+          class="form-control"
+          name="name"
+          #name="ngModel"
+          [(ngModel)]="model.firstName"
+          required
+        />
+        
+      </div>
+      <!-- Without [(ngModel)]="model.lastName"  -->
+      <div>
+        <label for="name">Last Name  </label>
+        <input
+          type="text"
+          name="lastName"
+          [ngModel]="model.lastName"
+          (ngModelChange)="model.lastName = $event"
+          required
+        />
+      </div>
+      <div>
+        <label for="name">Occupation  </label>
+        <input
+          type="text"
+          name="occupation"
+          [ngModel]="model.occupation"
+          (ngModelChange)="model.occupation = $event"
+          required
+        />
+      </div>
+      <div>
+        <label for="name">City of Residence  </label>
+        <input
+          type="text"
+          name="cityOfResidence"
+          [ngModel]="model.cityOfResidence"
+          (ngModelChange)="model.cityOfResidence = $event"
+          required
+        />
+      </div>
+      <div>
+        <label for="name">Country of Residence  </label>
+        <input
+          type="text"
+          name="countryOfResidence"
+          [ngModel]="model.countryOfResidence"
+          (ngModelChange)="model.countryOfResidence = $event"
+          required
+        />
+      </div>
+      <div>
+        <label for="name">Local Government of Residence  </label>
+        <input
+          type="text"
+          name="localGovernmentOfResidence"
+          [ngModel]="model.localGovernmentOfResidence"
+          (ngModelChange)="model.localGovernmentOfResidence = $event"
+          required
+        />
+      </div>
+      <div>
+        <label for="name">Marital Status  </label>
+        <input
+          type="text"
+          name="maritalStatus"
+          [ngModel]="model.maritalStatus"
+          (ngModelChange)="model.maritalStatus = $event"
+          required
+        />
+      </div>
+      <div>
+        <label for="name">Email Address </label>
+        <input
+          type="text"
+          name="email"
+          [ngModel]="model.email"
+          (ngModelChange)="model.email = $event"
+          required
+        />
+      </div>
+        <button type="submit" class="btn btn-default" [disabled]="!templateForm.valid">Submit</button>
+      </form>
+      
+      
+      <div *ngIf="submitted">
+        <h2>You submitted the following:</h2>
+        <div class="row">
+          <div class="col-md-2">First Name</div>
+          <div class="col-md-10 pull-left">{{ model.firstName }}</div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">Last Name</div>
+          <div class="col-md-10 pull-left">{{ model.lastName }}</div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">Occupation</div>
+          <div class="col-md-10 pull-left">{{ model.occupation }}</div>
+        </div>
+        <br />
+        <button class="btn btn-default" (click)="submitted=false">Edit</button>
+      </div>
+  </div>
+</div>

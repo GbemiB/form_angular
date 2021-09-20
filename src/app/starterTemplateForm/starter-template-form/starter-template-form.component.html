@@ -1,0 +1,55 @@
+<h1>Customer Edit</h1>
+<form #starterForm="ngForm" (ngSubmit)="onSubmit()">
+  Customer ID:
+  <input
+    type="text"
+    class="form-control"
+    name="customerID"
+    #customerid="ngModel"
+    [(ngModel)]="customer.customerID"
+    required
+  />
+  <br />
+  <span *ngIf="!customerid.valid">Customer ID is required!</span>
+  <br />
+  First Name:
+  <input
+    type="text"
+    class="form-control"
+    name="firstName"
+    #firstName="ngModel"
+    [(ngModel)]="customer.firstName"
+    required
+  />
+  <br />
+  <span *ngIf="!firstName.valid">First Name is required!</span>
+  <br />
+  Last Name:
+  <input
+    type="text"
+    class="form-control"
+    name="lastName"
+    #lastName="ngModel"
+    [(ngModel)]="customer.lastName"
+    required
+  />
+  <br />
+  <span *ngIf="!lastName.valid">Last Name is required!</span>
+  <br />
+  Country of Residence:
+  <input
+    type="text"
+    class="form-control"
+    name="country"
+    #country="ngModel"
+    [(ngModel)]="customer.country"
+    required
+  />
+  <br />
+  <span *ngIf="!customerid.valid">Country of Residence is required!</span>
+  <br />
+  <button class="btn btn-default" [disabled]="!starterForm.valid">
+    Submit
+  </button>
+  <br /><br />
+</form>
